@@ -41,7 +41,7 @@ echo "Price: {$info->getPrice()}<hr>";
 // $info->getPriceUpdated()
 
 $photos = $scanner->getPhotos($productId);
-// $photos = new \MarketScanner\Model\Photos($key, $productId);
+// $photos = new \MarketScanner\Model\Photos($key, $productId)->getPictures();
 
 echo "<b>Photos</b><br>";
 
@@ -56,7 +56,7 @@ foreach ($photos as $photoNumber => $photoCollection) {
 echo "<hr>";
 
 $specs = $scanner->getSpecs($productId);
-// $specs = new \MarketScanner\Model\Specs($key, $productId);
+// $specs = new \MarketScanner\Model\Specs($key, $productId)->getSpecifications();
 
 echo "<b>Specifications</b><br><br>";
 
