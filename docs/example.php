@@ -13,18 +13,12 @@ $productId = 415763024;
  */
 $scanner = new \MarketScanner\Scanner($key);
 
-/**
- * \MarketScanner\Model\Balance()
- */
 $balance = $scanner->getBalance();
 // $balance = new \MarketScanner\Model\Balance($key);
 
 echo "<b>Balance</b><br>";
 echo "Current: {$balance->getBalance()}<br>";
 
-/**
- * \MarketScanner\Model\Info()
- */
 $info = $scanner->getInfo($productId);
 // $info = new \MarketScanner\Model\Info($key, $productId);
 
@@ -46,9 +40,6 @@ echo "Price: {$info->getPrice()}<hr>";
 // $info->getPrice()
 // $info->getPriceUpdated()
 
-/**
- * Array
- */
 $photos = $scanner->getPhotos($productId);
 // $photos = new \MarketScanner\Model\Photos($key, $productId);
 
@@ -64,9 +55,6 @@ foreach ($photos as $photoNumber => $photoCollection) {
 
 echo "<hr>";
 
-/**
- * Array
- */
 $specs = $scanner->getSpecs($productId);
 // $specs = new \MarketScanner\Model\Specs($key, $productId);
 
