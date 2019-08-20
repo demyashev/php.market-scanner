@@ -27,6 +27,9 @@
         "guzzlehttp/guzzle" : "HTTP requests to API and back",
         "ext-json": "Decode API response"
     },
+    "config": {
+        "vendor-dir": "src/vendor"
+    },
     "autoload": {
         "psr-4": {
             "MarketScanner\\": ""

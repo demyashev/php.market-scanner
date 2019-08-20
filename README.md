@@ -2,6 +2,40 @@
 
 A simple PHP SDK for service [market-scanner.ru](https://market-scanner.ru).
 
+## Install
+
+### git
+Add the repository as a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to your project
+```
+$ git submodule add git://github.com/demyashev/market-scanner.git </path/to/clone>
+```
+
+### composer
+Add these lines to the file `composer.json`
+
+```t
+{
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "demyashev/market-scanner",
+                "version": "1.0.0",
+                "source": {
+                    "url": "https://github.com/demyashev/market-scanner",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }
+    ],
+    "require": {
+        "demyashev/market-scanner": "1.0.0."
+    }
+}
+
+```
+
 ## How to
 ```
 include __DIR__ . '/../src/vendor/autoload.php';
