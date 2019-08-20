@@ -1,0 +1,35 @@
+{
+    "name": "demyashev/market-scanner",
+    "description": "PHP SDK for market-scanner.ru",
+    "keywords": ["yandex", "market", "scanner", "api", "php", "sdk"],
+    "version": "1.0.0",
+    "time": "2019-08-20 14:00:00",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Alexander Demyashev",
+            "email": "alexander.demyashev@gmail.com",
+            "homepage": "https://demyashev.com",
+            "role": "developer"
+        }
+    ],
+    "support": {
+        "email": "support@market-scanner.ru"
+    },
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "^6.3",
+        "ext-json": "*"
+    },
+    "suggest": {
+        "php" : "PHP 7 strict mode",
+        "guzzlehttp/guzzle" : "HTTP requests to API and back",
+        "ext-json": "Decode API response"
+    },
+    "autoload": {
+        "psr-4": {
+            "MarketScanner\\": ""
+        }
+    }
+}
