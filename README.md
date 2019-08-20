@@ -13,27 +13,18 @@ $ git submodule add git://github.com/demyashev/market-scanner.git </path/to/clon
 ### composer
 Add these lines to the file `composer.json`
 
-```t
+```
 {
     "repositories": [
         {
-            "type": "package",
-            "package": {
-                "name": "demyashev/market-scanner",
-                "version": "1.0.0",
-                "source": {
-                    "url": "https://github.com/demyashev/market-scanner",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
+            "type": "vcs",
+            "url": "https://github.com/demyashev/market-scanner"
         }
     ],
     "require": {
-        "demyashev/market-scanner": "1.0.0."
+        "demyashev/market-scanner": "@dev"
     }
 }
-
 ```
 
 ## How to
