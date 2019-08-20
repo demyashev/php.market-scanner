@@ -43,10 +43,10 @@ $info = $scanner->getInfo($productId);
 // $info = new \MarketScanner\Model\Info($key, $productId);
 
 $photos = $scanner->getPhotos($productId);
-// $photos = new \MarketScanner\Model\Photos($key, $productId);
+// $photos = new \MarketScanner\Model\Photos($key, $productId)->getPictures();
 
 $specs = $scanner->getSpecs($productId);
-// $specs = new \MarketScanner\Model\Specs($key, $productId);
+// $specs = new \MarketScanner\Model\Specs($key, $productId)->getSpecifications();
 ```
 
 You can find more information in [example](/docs/example.php) file.
