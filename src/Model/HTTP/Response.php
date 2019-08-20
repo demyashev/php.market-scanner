@@ -31,7 +31,7 @@ class Response {
             $this->_response = $response;
         }
         catch (Exception $e) {
-            die("{$e->getFile()}:{$e->getLine()} {$e->getMessage()}");
+            die($e->getMessage());
         }
 
         if (isset($this->_object->error)) {
