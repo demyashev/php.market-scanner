@@ -41,7 +41,8 @@ echo "Price: {$info->getPrice()}<hr>";
 // $info->getPriceUpdated()
 
 $photos = $scanner->getPhotos($productId);
-// $photos = (new \MarketScanner\Model\Photos($key, $productId))->getPictures();
+// $photos = $scanner->getPhotos($productId, '50x50');
+// $photos = (new \MarketScanner\Model\Photos($key, $productId))->getPictures('original');
 
 echo "<b>Photos</b><br>";
 

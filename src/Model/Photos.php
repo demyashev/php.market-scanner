@@ -28,11 +28,29 @@ class Photos extends Base {
     }
 
     /**
+     * @param string $size original|50x50|75x75|100x100|120x120|150x150|200x200|240x240|250x250|500x500|1000x1000
+     *
      * @return array
      */
-    public function getPictures() : array
+    public function getPictures(string $size = '') : array
     {
-        return $this->pictures ?? [];
+        $pictures = $this->pictures ?? [];
+
+        if ($size) {
+            $picturesSized = [];
+
+            foreach ($pictures as $pictureNumber => $pictureCollection) {
+                foreach ($pictureCollection as $pictureItem) {
+                    if ($pictureItem->size === $size) {
+                        $picturesSized[$pictureNumber][] = $pictureItem;
+                    }
+                }
+            }
+
+            $pictures = $picturesSized;
+        }
+
+        return $pictures;
     }
 
     /**

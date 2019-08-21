@@ -41,14 +41,15 @@ class Scanner {
 
     /**
      * @param int $id
+     * @param string $size
      *
      * @return array
      */
-    public function getPhotos(int $id) : array
+    public function getPhotos(int $id, string $size = '') : array
     {
         $photos = new Photos($this->key, $id);
 
-        return $photos->getPictures();
+        return $photos->getPictures($size);
     }
 
     /**
