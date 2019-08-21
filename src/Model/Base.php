@@ -93,7 +93,7 @@ class Base {
      *
      * @return Base
      */
-    protected function getFromAPI() : self
+    protected function getFromAPI()
     {
         $request =
             (new Request())
