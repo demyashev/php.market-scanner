@@ -43,7 +43,7 @@ class Request {
             return (new Response($responseBody))->as_object();
         }
         catch (Exception $e) {
-            die($e->getMessage());
+            // die($e->getMessage());
         }
     }
 

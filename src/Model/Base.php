@@ -105,7 +105,7 @@ class Base {
             return $this->fill($response);
         }
         catch (Exception $e) {
-            die($e->getMessage());
+            // die($e->getMessage());
         }
     }
 

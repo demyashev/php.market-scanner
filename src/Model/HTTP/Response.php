@@ -31,11 +31,11 @@ class Response {
             $this->_response = $response;
         }
         catch (Exception $e) {
-            die($e->getMessage());
+            // die($e->getMessage());
         }
 
         if (isset($this->_object->error)) {
-            throw new Exception($this->_object->error);
+            // die($this->_object->error);
         }
     }
 
