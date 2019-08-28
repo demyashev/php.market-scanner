@@ -37,7 +37,7 @@ $productId = 415763024;
 $scanner = new \MarketScanner\Scanner($key);
 
 $balance = $scanner->getBalance();
-// $balance = new \MarketScanner\Model\Balance($key);
+// $balance = (new \MarketScanner\Model\Balance($key))->getBalance();
 
 $info = $scanner->getInfo($productId);
 // $info = new \MarketScanner\Model\Info($key, $productId);

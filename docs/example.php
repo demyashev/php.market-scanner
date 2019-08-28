@@ -14,10 +14,10 @@ $productId = 415763024;
 $scanner = new \MarketScanner\Scanner($key);
 
 $balance = $scanner->getBalance();
-// $balance = new \MarketScanner\Model\Balance($key);
+// $balance = (new \MarketScanner\Model\Balance($key))->getBalance();
 
 echo "<b>Balance</b><br>";
-echo "Current: {$balance->getBalance()}<br>";
+echo "Current: {$balance}<br>";
 
 $info = $scanner->getInfo($productId);
 // $info = new \MarketScanner\Model\Info($key, $productId);

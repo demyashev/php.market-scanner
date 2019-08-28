@@ -22,11 +22,11 @@ class Scanner {
     }
 
     /**
-     * @return Balance
+     * @return int
      */
-    public function getBalance() : Balance
+    public function getBalance() : int
     {
-        return new Balance($this->key);
+        return (new Balance($this->key))->getBalance();
     }
 
     /**
