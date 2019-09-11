@@ -100,6 +100,7 @@ class Base {
                 ->setUrl($this->getEntityUrl())
                 ->setData($this->getData());
         try {
+            // StdClass
             $response = $request->exec();
 
             return $this->fill($response);

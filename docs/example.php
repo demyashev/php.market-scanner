@@ -40,6 +40,37 @@ echo "Price: {$info->getPrice()}<hr>";
 // $info->getPrice()
 // $info->getPriceUpdated()
 
+$reviews = $scanner->getReviews($productId, 10, 4);
+echo "<b>Reviews:</b><br>";
+
+foreach ($reviews as $review) {
+    echo $review->uid . '<br>';
+    echo $review->author . '<br>';
+    echo $review->avatar . '<br>';
+    echo $review->rating . '<br>';
+    echo $review->pluses . '<br>';
+    echo $review->minuses . '<br>';
+    echo $review->comment . '<br>';
+    echo $review->postdate . '<br>';
+
+    if ($review->pictures) {
+        foreach ($review->pictures as $picture) {
+            echo $picture . '<br>';
+        }
+    }
+
+    if ($review->subcomments) {
+        foreach ($review->subcomments as $subcommentIndex => $subcomment) {
+            echo $subcomment->author . '<br>';
+            echo $subcomment->comment . '<br>';
+            echo $subcomment->postdate . '<br>';
+            echo $subcomment->avatar . '<br>';
+        }
+    }
+
+    echo '<hr>';
+}
+
 $photos = $scanner->getPhotos($productId);
 // $photos = $scanner->getPhotos($productId, '50x50');
 // $photos = (new \MarketScanner\Model\Photos($key, $productId))->getPictures('original');

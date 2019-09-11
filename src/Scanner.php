@@ -6,6 +6,7 @@ use MarketScanner\Model\Balance;
 use MarketScanner\Model\Info;
 use MarketScanner\Model\Photos;
 use MarketScanner\Model\Specs;
+use MarketScanner\Model\Reviews;
 
 class Scanner {
 
@@ -62,5 +63,12 @@ class Scanner {
         $specs = new Specs($this->key, $id);
 
         return $specs->getSpecifications();
+    }
+
+    public function getReviews(int $id, int $quantity = 10, int $min = 0) : array
+    {
+        $reviews = new Reviews($this->key, $id, $quantity, $min);
+
+        return $reviews->getReviews($min);
     }
 }

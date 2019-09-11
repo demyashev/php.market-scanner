@@ -47,6 +47,9 @@ $photos = $scanner->getPhotos($productId);
 
 $specs = $scanner->getSpecs($productId);
 // $specs = (new \MarketScanner\Model\Specs($key, $productId))->getSpecifications();
+
+$reviews = $scanner->getReviews($productId);
+// $reviews = (new \MarketScanner\Model\Reviews($key, $productId))
 ```
 
 You can find more information in [example](/docs/example.php) file.
