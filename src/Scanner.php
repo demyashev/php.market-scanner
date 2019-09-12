@@ -69,6 +69,6 @@ class Scanner {
     {
         $reviews = new Reviews($this->key, $id, $quantity, $min);
 
-        return $reviews->getReviews($min);
+        return $reviews->getReviews();
     }
 }

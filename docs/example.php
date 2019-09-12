@@ -41,6 +41,8 @@ echo "Price: {$info->getPrice()}<hr>";
 // $info->getPriceUpdated()
 
 $reviews = $scanner->getReviews($productId, 10, 4);
+// $reviews = $scanner->getReviews($productId);
+
 echo "<b>Reviews:</b><br>";
 
 foreach ($reviews as $review) {
