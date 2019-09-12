@@ -44,7 +44,7 @@ class Response {
      */
     public function as_object() : stdClass
     {
-        return $this->_object;
+        return $this->_object ?? new stdClass();
     }
 
     /**
@@ -52,6 +52,6 @@ class Response {
      */
     public function as_string() : string
     {
-        return $this->_response;
+        return $this->_response ?? '';
     }
 }
