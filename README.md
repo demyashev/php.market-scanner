@@ -1,6 +1,11 @@
 # PHP SDK for Yandex.Market
 
-A simple PHP SDK for service [market-scanner.ru](https://market-scanner.ru).
+A simple PHP SDK for service [ymscanner.ru](https://ymscanner.ru). 
+
+Version 2.0 changes (new methods):
+- searchmodel
+- bulkprice
+- price
 
 ## Install
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * @see https://market-scanner.ru/doc/info
+ * @link https://ymscanner.ru/doc/info
  */
 namespace MarketScanner\Model;
 
@@ -64,8 +64,7 @@ class Info extends Base {
     public function __construct(string $key, int $id)
     {
         $this->setEntityUrl('/info');
-
-        parent::__construct([
+        $this->setData([
             'key' => $key,
             'id' => $id,
         ]);

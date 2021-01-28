@@ -5,7 +5,7 @@ include __DIR__ . '/../src/vendor/autoload.php';
 /**
  * Settings
  */
-$key = '<auth_key>';
+$key = '<key>';
 $productId = 415763024;
 
 /**
@@ -26,6 +26,26 @@ echo "<b>Info</b><br>";
 echo "Name: {$info->getName()}<br>";
 echo "Price: {$info->getPrice()}<hr>";
 
+$price = $scanner->getPrice($productId);
+
+echo "<b>Only price</b><br>";
+echo "Price: {$price->getPrice()}<br>";
+echo "Price updated: {$price->getPriceUpdated()}<hr>";
+
+echo '<b>Prices</b><br>';
+$prices = $scanner->getPrices([415763024, 415763025]);
+
+foreach ($prices as $priceIndex => $price) {
+    echo "{$priceIndex} => {$price->getPrice()}<br>";
+}
+echo '<hr>';
+
+echo "<b>Search</b><br>";
+$search = $scanner->getSearchModel('Туалетная бумага Veiro');
+echo "ID: {$search->getId()}<br>";
+echo "Name: {$search->getName()}<br>";
+echo "URL: {$search->getUrl()}<hr>";
+
 // All methods:
 //
 // $info->getName()
@@ -39,6 +59,7 @@ echo "Price: {$info->getPrice()}<hr>";
 // $info->getModof()
 // $info->getPrice()
 // $info->getPriceUpdated()
+
 
 $reviews = $scanner->getReviews($productId, 10, 4);
 // $reviews = $scanner->getReviews($productId);

@@ -5,6 +5,9 @@ namespace MarketScanner;
 use MarketScanner\Model\Balance;
 use MarketScanner\Model\Info;
 use MarketScanner\Model\Photos;
+use MarketScanner\Model\Price;
+use MarketScanner\Model\Prices;
+use MarketScanner\Model\Searchmodel;
 use MarketScanner\Model\Specs;
 use MarketScanner\Model\Reviews;
 
@@ -38,6 +41,23 @@ class Scanner {
     public function getInfo(int $id) : Info
     {
         return new Info($this->key, $id);
+    }
+
+    public function getPrice(int $id) : Price
+    {
+        return new Price($this->key, $id);
+    }
+
+    public function getPrices(array $ids) : array
+    {
+        $prices = new Prices($this->key, implode(',', $ids));
+
+        return $prices->getPrices($this->key);
+    }
+
+    public function getSearchModel(string $search)
+    {
+        return new Searchmodel($this->key, $search);
     }
 
     /**

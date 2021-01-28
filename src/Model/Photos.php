@@ -1,6 +1,6 @@
 <?php
 /**
- * @see https://market-scanner.ru/doc/photos
+ * @see https://ymscanner.ru/doc/photos
  */
 namespace MarketScanner\Model;
 

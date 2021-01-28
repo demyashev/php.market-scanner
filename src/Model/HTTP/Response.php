@@ -47,6 +47,11 @@ class Response {
         return $this->_object ?? new stdClass();
     }
 
+    public function as_array() : array
+    {
+        return (array) $this->_object;
+    }
+
     /**
      * @return string
      */

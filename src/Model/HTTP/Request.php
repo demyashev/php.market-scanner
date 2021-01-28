@@ -7,7 +7,7 @@ use stdClass;
 
 class Request {
 
-    const URL = 'https://market-scanner.ru/api';
+    const URL = 'https://ymscanner.ru/api';
 
     /**
      * Final query URL
@@ -26,9 +26,9 @@ class Request {
     /**
      * Make POST request
      *
-     * @return stdClass decoded json
+     * @return Response
      */
-    public function exec() : stdClass
+    public function exec()
     {
         $client = new \GuzzleHttp\Client();
 
@@ -40,7 +40,7 @@ class Request {
 
             $responseBody = (string) $response->getBody();
 
-            return (new Response($responseBody))->as_object();
+            return new Response($responseBody);
         }
         catch (Exception $e) {
             // die($e->getMessage());

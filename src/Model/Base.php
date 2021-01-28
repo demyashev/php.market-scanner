@@ -4,6 +4,7 @@ namespace MarketScanner\Model;
 
 use Exception;
 use MarketScanner\Model\HTTP\Request;
+use MarketScanner\Model\HTTP\Response;
 use stdClass;
 
 class Base {
@@ -37,7 +38,7 @@ class Base {
     /**
      * @return string
      */
-    private function getKey() : string
+    protected function getKey() : string
     {
         return $this->key ?? '';
     }
@@ -100,10 +101,15 @@ class Base {
                 ->setUrl($this->getEntityUrl())
                 ->setData($this->getData());
         try {
-            // StdClass
+            /** @var Response $response */
             $response = $request->exec();
 
-            return $this->fill($response);
+            if ($this->getEntityUrl() === '/bulkprice') {
+                $this->prices = $response->as_array();
+            }
+            else {
+                return $this->fill($response->as_object());
+            }
         }
         catch (Exception $e) {
             // die($e->getMessage());
@@ -119,7 +125,7 @@ class Base {
     }
 
     /**
-     * @param string $entityUrl '/photos', '/info', '/balance', '/specs'
+     * @param string $entityUrl '/photos', '/info', ...
      *
      * @return Base
      */
@@ -156,12 +162,15 @@ class Base {
      * Base constructor.
      *
      * @param array $data
+     * @param bool $autoload
      */
-    public function __construct(array $data)
+    public function __construct(array $data, bool $autoload = true)
     {
         $this->setData($data);
 
-        $this->getFromAPI();
+        if ($autoload) {
+            $this->getFromAPI();
+        }
     }
 
     /**
