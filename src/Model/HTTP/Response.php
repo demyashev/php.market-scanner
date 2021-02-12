@@ -44,12 +44,12 @@ class Response {
      */
     public function as_object() : stdClass
     {
-        return $this->_object ?? new stdClass();
+        return empty($this->_object) ? new stdClass() : $this->_object;
     }
 
     public function as_array() : array
     {
-        return (array) $this->_object;
+        return !empty($this->_object) ? (array) $this->_object : [];
     }
 
     /**
