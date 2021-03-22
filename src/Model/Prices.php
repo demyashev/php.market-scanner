@@ -11,7 +11,7 @@ class Prices extends Base {
      */
     protected $prices;
 
-    public function __construct(string $key, int $id)
+    public function __construct(string $key, string $id)
     {
         $this->setEntityUrl('/bulkprice');
 
