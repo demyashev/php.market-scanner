@@ -64,7 +64,8 @@ class Info extends Base {
     public function __construct(string $key, int $id)
     {
         $this->setEntityUrl('/info');
-        $this->setData([
+
+        parent::__construct([
             'key' => $key,
             'id' => $id,
         ]);
