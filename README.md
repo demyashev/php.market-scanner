@@ -2,6 +2,10 @@
 
 A simple PHP SDK for service [ymscanner.ru](https://ymscanner.ru). 
 
+Version 2.1 changes:
+- getInfo() setData() -> parent::__construct()
+- getPrices() int $id - string $ids
+
 Version 2.0 changes (new methods):
 - searchmodel
 - bulkprice
